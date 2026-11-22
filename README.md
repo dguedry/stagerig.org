@@ -21,7 +21,7 @@ python3 -m http.server 8000     # then open http://localhost:8000
 
 - `stage.webp`, `stage-1280.webp`, `social.jpg`: `branding/wallpaper-background.png` in stagerig-os
 - `wordmark.svg`: `branding/stagerig-wordmark.svg` in stagerig-os
-- StageRig's screenshots and icon: `docs/images/` and `Resources/` in stagerig
+- StageRig's screenshots and icon: `docs/images/` and `Resources/` in stagerig (`favicon.svg` is `stagerig-small.svg`, the icon as drawn for a browser tab)
 - VST Environment's screenshots and icon: `data/` in vstenv
 
 When a screenshot changes there, convert it to WebP and replace it here.
