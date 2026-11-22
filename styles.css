@@ -190,7 +190,24 @@ code { font-family: var(--mono); font-size: .9em; }
 .steps p { color: var(--soft); font-size: 16px; }
 .steps p:last-child { margin-bottom: 0; }
 .steps .code { margin-bottom: 14px; }
-.already { color: var(--soft); margin: 32px 0 0; }
+.start > h2.own-title { font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; margin: 72px 0 12px; }
+.own-lede { color: var(--soft); margin-bottom: 28px; }
+.own { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+.own article { min-width: 0; padding: 28px; border-radius: 18px; background: var(--panel); border: 1px solid var(--line); }
+.own header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+.own header img { width: 44px; height: 44px; border-radius: 10px; }
+.own h3 { font-size: 24px; font-weight: 600; }
+.own ol { list-style: none; counter-reset: own; margin: 0; padding: 0; }
+.own ol > li { counter-increment: own; position: relative; padding: 0 0 6px 44px; min-width: 0; }
+.own ol > li::before {
+  content: counter(own); position: absolute; left: 0; top: 0; display: grid; place-items: center;
+  width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid var(--amber); color: var(--amber); font: 700 14px var(--display);
+}
+.own p { color: var(--soft); font-size: 16px; }
+.own b { color: var(--text); }
+.own .label { margin: 14px 0 8px; color: var(--text); font-size: 12px; }
+.own .code { margin-bottom: 16px; }
+.own .note { margin: 14px 0 0; padding-top: 16px; border-top: 1px solid var(--line); font-size: 14.5px; }
 
 /* Footer */
 .foot { border-top: 1px solid var(--line); background: var(--night); padding: 44px var(--gutter) 56px; text-align: center; }
@@ -203,7 +220,9 @@ code { font-family: var(--mono); font-size: .9em; }
 @media (max-width: 900px) {
   .top nav a:not(.nav-cta) { display: none; }
   .proof, .trio, .features, .steps, .triple { grid-template-columns: 1fr; }
-  .split, .pair, .get { grid-template-columns: 1fr; gap: 28px; }
+  .split, .pair, .get, .own { grid-template-columns: 1fr; gap: 28px; }
+  .own article { padding: 22px; }
+  .own ol > li { padding-left: 38px; }
   .hero { min-height: 0; padding-top: 96px; background-image:
     linear-gradient(180deg, rgba(5, 16, 28, .15) 0%, rgba(5, 16, 28, .45) 45%, var(--deep) 100%),
     url("assets/img/stage-1280.webp"); }

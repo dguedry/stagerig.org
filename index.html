@@ -44,7 +44,7 @@
       Three projects that make one rig.</p>
     <p class="actions">
       <a class="button primary" href="#start">Build the rig</a>
-      <a class="button" href="#stagerig">See StageRig</a>
+      <a class="button" href="#install">Install the apps</a>
     </p>
   </div>
   <dl class="proof">
@@ -358,9 +358,91 @@ flatpak install --user vstenv io.github.dguedry.vstenv</code></pre>
         everything is in place.</p>
     </li>
   </ol>
-  <p class="already">Already have a Linux you like? Install
-    <a href="#stagerig">StageRig</a> and <a href="#vstenv">VST Environment</a>
-    on their own.</p>
+  <h2 class="own-title" id="install">Or add them to the Linux you already have</h2>
+  <p class="own-lede">StageRig and VST Environment install on their own, on
+    any recent Linux. Neither needs StageRig OS.</p>
+
+  <div class="own">
+    <article>
+      <header>
+        <img src="assets/img/stagerig-icon.svg" alt="" width="44" height="44">
+        <h3>StageRig</h3>
+      </header>
+      <ol>
+        <li>
+          <p>Add StageRig's signed package repository and install it. New
+            releases then arrive with your ordinary updates.</p>
+          <p class="label">Debian, Ubuntu, Linux Mint</p>
+          <div class="code">
+            <button class="copy" type="button">Copy</button>
+<pre><code>sudo install -d /etc/apt/keyrings
+curl -fsSL https://dguedry.github.io/stagerig/key.gpg | sudo tee /etc/apt/keyrings/stagerig.gpg >/dev/null
+echo "deb [signed-by=/etc/apt/keyrings/stagerig.gpg] https://dguedry.github.io/stagerig/apt stable main" \
+  | sudo tee /etc/apt/sources.list.d/stagerig.list
+sudo apt update && sudo apt install stagerig</code></pre>
+          </div>
+          <p class="label">Fedora</p>
+          <div class="code">
+            <button class="copy" type="button">Copy</button>
+<pre><code>sudo curl -fsSL -o /etc/yum.repos.d/stagerig.repo https://dguedry.github.io/stagerig/stagerig.repo
+sudo dnf install stagerig</code></pre>
+          </div>
+        </li>
+        <li>
+          <p>StageRig comes with a General MIDI player and no other plugins.
+            These free ones are good enough to gig with (the line is for Debian,
+            Ubuntu and Mint; the manual has Fedora's):</p>
+          <div class="code">
+            <button class="copy" type="button">Copy</button>
+<pre><code>sudo apt install setbfree zynaddsubfx-lv2 avldrums.lv2 dragonfly-reverb \
+                 lsp-plugins-lv2 x42-plugins calf-plugins guitarix-lv2 zam-plugins</code></pre>
+          </div>
+        </li>
+        <li>
+          <p>Open <b>StageRig</b> from your applications menu, choose your
+            audio interface under <b>Audio...</b>, and add an instrument.
+            The <a href="https://github.com/dguedry/stagerig/blob/main/docs/MANUAL.md">manual</a>
+            takes it from there.</p>
+        </li>
+      </ol>
+      <p class="note">Packages are for 64-bit Intel and AMD computers. Each
+        release's <code>.deb</code> and <code>.rpm</code> are also on the
+        <a href="https://github.com/dguedry/stagerig/releases/latest">releases page</a>.</p>
+    </article>
+
+    <article>
+      <header>
+        <img src="assets/img/vstenv-icon.svg" alt="" width="44" height="44">
+        <h3>VST Environment</h3>
+      </header>
+      <ol>
+        <li>
+          <p>You need Flatpak, which most Linux systems already have. If
+            yours does not, see <a href="https://flatpak.org/setup/">flatpak.org/setup</a>.
+            Then paste these two lines:</p>
+          <div class="code">
+            <button class="copy" type="button">Copy</button>
+<pre><code>flatpak remote-add --if-not-exists --user vstenv https://dguedry.github.io/vstenv/vstenv.flatpakrepo
+flatpak install --user vstenv io.github.dguedry.vstenv</code></pre>
+          </div>
+        </li>
+        <li>
+          <p>Open <b>VST Environment</b> from your applications menu, under
+            Audio or Sound &amp; Video. The first time, it sets everything up
+            by itself.</p>
+        </li>
+        <li>
+          <p>On the <b>Install</b> tab, open your vendor's store app and sign
+            in, or choose an installer you downloaded. The plugins then show
+            up in StageRig and your other music software like any
+            others.</p>
+        </li>
+      </ol>
+      <p class="note">Updates arrive with your other Flatpak updates. The
+        <a href="https://github.com/dguedry/vstenv#readme">guide</a> covers
+        each vendor and what to do when something does not work.</p>
+    </article>
+  </div>
 </section>
 
 </main>
