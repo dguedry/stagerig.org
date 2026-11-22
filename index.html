@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StageRig: play live on Linux</title>
+<meta name="description" content="StageRig is a free live-performance plugin host for Linux. StageRig OS sets up Ubuntu for low-latency audio, and VST Environment runs your Windows plugins.">
+<meta property="og:title" content="StageRig: play live on Linux">
+<meta property="og:description" content="A live-performance plugin host, a low-latency Ubuntu setup, and your Windows plugins. Free and open source.">
+<meta property="og:image" content="https://stagerig.org/assets/img/social.jpg">
+<meta property="og:url" content="https://stagerig.org/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#05101c">
+<link rel="icon" href="assets/img/stagerig-icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/icon-256.png">
+<link rel="preload" href="assets/fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <a class="brand" href="#" aria-label="StageRig, top of page">
+    <img src="assets/img/wordmark.svg" alt="StageRig" width="140" height="30">
+  </a>
+  <nav aria-label="Sections">
+    <a href="#stagerig">StageRig</a>
+    <a href="#os">StageRig OS</a>
+    <a href="#vstenv">VST Environment</a>
+    <a class="nav-cta" href="#start">Get started</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Free and open source, for Linux</p>
+    <h1>Play live <span class="amber">on Linux.</span></h1>
+    <p class="lede">A performance host for keyboards and audio, an Ubuntu set up for
+      low latency, and your Windows plugins working beside the native ones.
+      Three projects that make one rig.</p>
+    <p class="actions">
+      <a class="button primary" href="#start">Build the rig</a>
+      <a class="button" href="#stagerig">See StageRig</a>
+    </p>
+  </div>
+  <dl class="proof">
+    <div>
+      <dt>1.3&nbsp;ms</dt>
+      <dd>buffer with Kontakt&nbsp;8, a Windows plugin, in StageRig on StageRig&nbsp;OS</dd>
+    </div>
+    <div>
+      <dt>4 formats</dt>
+      <dd>VST3, CLAP, LV2 and LADSPA, each plugin in its own process</dd>
+    </div>
+    <div>
+      <dt>1 command</dt>
+      <dd>turns a stock Ubuntu&nbsp;26.04 LTS into a finished rig</dd>
+    </div>
+  </dl>
+</section>
+
+<section class="trio" aria-label="The three projects">
+  <a class="card" href="#stagerig">
+    <img src="assets/img/stagerig-icon.svg" alt="" width="56" height="56">
+    <h2>StageRig</h2>
+    <p>The live host. A program for every sound in the show, changed from the
+      keyboard, a footswitch or a tablet on the stand.</p>
+    <span class="more">The app</span>
+  </a>
+  <a class="card" href="#os">
+    <span class="glyph" aria-hidden="true">
+      <svg viewBox="0 0 56 56" width="56" height="56"><rect x="1" y="1" width="54" height="54" rx="13" fill="#0b1b2e" stroke="#1d3a5c"/><path d="M10 30h7l4-12 6 22 5-16 3 6h11" fill="none" stroke="#f99b24" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </span>
+    <h2>StageRig OS</h2>
+    <p>One package that sets up Ubuntu for realtime audio and brings in
+      StageRig, instruments, effects and soundfonts.</p>
+    <span class="more">The system</span>
+  </a>
+  <a class="card" href="#vstenv">
+    <img src="assets/img/vstenv-icon.svg" alt="" width="56" height="56">
+    <h2>VST Environment</h2>
+    <p>Installs your Windows plugins, from Native Access to a plain installer,
+      and makes them show up like any other plugin.</p>
+    <span class="more">The bridge</span>
+  </a>
+</section>
+
+<section class="product" id="stagerig">
+  <div class="intro">
+    <p class="eyebrow">The app</p>
+    <h2>StageRig</h2>
+    <p class="lede">A live-performance plugin host, for keyboards and for audio.
+      It exists because the hosts keyboard players rely on have no Linux
+      version.</p>
+  </div>
+
+  <figure class="shot wide">
+    <img src="assets/img/stagerig.webp" width="1280" height="800" loading="lazy"
+         alt="StageRig's main window: songs and a set list with tempos, two keyboards and an audio input, a program list, a SWAM Alto Sax with its key and velocity ranges, and the on-screen keyboard">
+    <figcaption>Songs and set lists, inputs, programs, and the plugins on the program in play.</figcaption>
+  </figure>
+
+  <ul class="features">
+    <li>
+      <h3>Keyboards and audio, side by side</h3>
+      <p>Each keyboard, microphone or guitar has its own 128 programs, chosen
+        by Program Change while you play. Splits, layers, velocity curves and
+        effects chains for every instrument.</p>
+    </li>
+    <li>
+      <h3>A crash takes down one plugin, not the show</h3>
+      <p>Every plugin runs in its own process and restarts itself with its
+        state. A watchman restarts StageRig itself, back on the same song.</p>
+    </li>
+    <li>
+      <h3>Songs, set lists and backing tracks</h3>
+      <p>A song recalls a program per input, a tempo, charts and tracks that
+        stretch and transpose with it. Step through the set from a
+        footswitch.</p>
+    </li>
+    <li>
+      <h3>Your keyboard's knobs follow what you play</h3>
+      <p>Eight knobs in pages on the instrument in play, with NKS knob pages
+        read from the plugin. Komplete Kontrol and Launchkey screens show the
+        program.</p>
+    </li>
+    <li>
+      <h3>Built for small buffers</h3>
+      <p>A native PipeWire and JACK client, 128-sample blocks by default,
+        parallel plugin loading, and a late-block counter in the status
+        bar.</p>
+    </li>
+    <li>
+      <h3>A pre-show check</h3>
+      <p>Lists everything that could go wrong before the first song, and a
+        safety guard on every output stops broken audio reaching the desk.</p>
+    </li>
+  </ul>
+
+  <div class="split">
+    <div>
+      <h3 class="big">The whole plugin, on the music stand</h3>
+      <p>A built-in web app changes programs from a tablet, with no app to
+        install. It also opens any loaded plugin's own interface there: the
+        working editor, mirrored. Pull a drawbar on the tablet and the organ
+        on stage moves.</p>
+      <p>It shows your charts too, following the set list from song to song,
+        and StageRig can serve its own wifi when the venue has none.</p>
+    </div>
+    <figure class="shot">
+      <img src="assets/img/tablet-gui.webp" width="1560" height="870" loading="lazy"
+           alt="A Hammond organ plugin's own interface on a tablet, with its drawbars and Leslie switch">
+      <figcaption>A plugin's editor on the tablet, drawn by the plugin itself.</figcaption>
+    </figure>
+  </div>
+
+  <div class="pair">
+    <figure class="shot">
+      <img src="assets/img/perform.webp" width="1600" height="1000" loading="lazy"
+           alt="The performance view: each keyboard's program in large type above its knobs">
+      <figcaption>Perform: each keyboard's program in large type, with its knobs.</figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="assets/img/tablet-setlist.webp" width="1478" height="815" loading="lazy"
+           alt="The tablet's set list with the current song highlighted and what each keyboard plays">
+      <figcaption>The set list on the tablet.</figcaption>
+    </figure>
+  </div>
+
+  <div class="get">
+    <div>
+      <h3>Install StageRig</h3>
+      <p>For Debian, Ubuntu and Linux Mint, from a signed repository, so new
+        releases arrive with your ordinary updates. Fedora packages are on
+        GitHub. Or let <a href="#os">StageRig OS</a> install it for you.</p>
+      <p class="links">
+        <a href="https://github.com/dguedry/stagerig/blob/main/docs/MANUAL.md">Read the manual</a>
+        <a href="https://github.com/dguedry/stagerig">Source on GitHub</a>
+      </p>
+    </div>
+    <div class="code">
+      <button class="copy" type="button">Copy</button>
+<pre><code>sudo install -d /etc/apt/keyrings
+curl -fsSL https://dguedry.github.io/stagerig/key.gpg | sudo tee /etc/apt/keyrings/stagerig.gpg >/dev/null
+echo "deb [signed-by=/etc/apt/keyrings/stagerig.gpg] https://dguedry.github.io/stagerig/apt stable main" \
+  | sudo tee /etc/apt/sources.list.d/stagerig.list
+sudo apt update && sudo apt install stagerig</code></pre>
+    </div>
+  </div>
+</section>
+
+<section class="product stage" id="os">
+  <div class="intro">
+    <p class="eyebrow">The system</p>
+    <h2>StageRig OS</h2>
+    <p class="lede">Not a distribution, and no ISO to download. You install
+      ordinary Ubuntu 26.04 LTS, and one package turns it into a rig for
+      playing live.</p>
+  </div>
+
+  <div class="get first">
+    <div>
+      <h3>One line on a fresh Ubuntu</h3>
+      <p>Then restart. Or give the Ubuntu installer the automated-install
+        address and it does the same at the end of the installation.</p>
+      <p class="links">
+        <a href="https://github.com/dguedry/stagerig-os#install">Both ways, step by step</a>
+        <a href="https://github.com/dguedry/stagerig-os">Source on GitHub</a>
+      </p>
+    </div>
+    <div class="code">
+      <button class="copy" type="button">Copy</button>
+<pre><code>wget -qO- https://dguedry.github.io/stagerig-os/install.sh | sudo bash</code></pre>
+    </div>
+  </div>
+
+  <ul class="features">
+    <li>
+      <h3>A kernel that answers on time</h3>
+      <p>Boots with full preemption and threaded interrupts, the options
+        Ubuntu Studio uses, on Ubuntu's standard kernel.</p>
+    </li>
+    <li>
+      <h3>Realtime for every user</h3>
+      <p>Realtime priority and locked memory without joining a group or
+        editing a file.</p>
+    </li>
+    <li>
+      <h3>One sound system</h3>
+      <p>PipeWire fixed at 48&nbsp;kHz and serving every JACK program. Nothing
+        resamples, and sound devices are never put to sleep.</p>
+    </li>
+    <li>
+      <h3>Nothing happens during a show</h3>
+      <p>No automatic updates, no screen blanking, no sleep, no file indexer.
+        You update when it suits you, with one command.</p>
+    </li>
+    <li>
+      <h3>Ready to play</h3>
+      <p>StageRig, Surge XT, setBfree, ZynAddSubFX, AVL Drumkits, reverbs and
+        effects, General MIDI soundfonts, and VST Environment.</p>
+    </li>
+    <li>
+      <h3>Nothing hidden</h3>
+      <p>Every change is listed with its file and its reason, and purging
+        the package removes the settings. A checker tells you what needs a
+        look.</p>
+    </li>
+  </ul>
+
+  <blockquote class="measure">
+    <p><strong>1.3&nbsp;ms.</strong> Kontakt&nbsp;8, bridged from Windows by VST
+      Environment, played in StageRig on a PC set up by StageRig&nbsp;OS.</p>
+    <footer>The buffer StageRig reported: 64 samples at 48&nbsp;kHz. What your
+      computer and audio interface manage will differ.</footer>
+  </blockquote>
+</section>
+
+<section class="product" id="vstenv">
+  <div class="intro">
+    <p class="eyebrow">The bridge</p>
+    <h2>VST Environment</h2>
+    <p class="lede">Use your Windows plugins and instruments in Linux music
+      software. It sets up and repairs the Windows compatibility layer for
+      you, so you never have to.</p>
+  </div>
+
+  <div class="triple">
+    <figure class="shot">
+      <img src="assets/img/vstenv-install.webp" width="880" height="660" loading="lazy"
+           alt="The Install tab, listing vendor store apps and a button for any installer file">
+      <figcaption>Install from a vendor's store app, or from a file.</figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="assets/img/vstenv-plugins.webp" width="880" height="660" loading="lazy"
+           alt="The Plugins tab, listing installed Steinberg and Audio Modeling products">
+      <figcaption>Your plugins, and what was installed.</figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="assets/img/vstenv-health.webp" width="880" height="660" loading="lazy"
+           alt="The Health tab, a list of checks each with its fix">
+      <figcaption>Every check, with its fix.</figcaption>
+    </figure>
+  </div>
+
+  <div class="split">
+    <div>
+      <h3 class="big">Sign in, install, play</h3>
+      <p>Plugins appear in StageRig, REAPER, Bitwig, Ardour and other hosts
+        like any native plugin. Your licences work as they do on Windows,
+        iLok included. No Windows, no Windows licence, and no Wine to
+        install: the app brings its own and writes only inside your home
+        folder.</p>
+      <p class="links">
+        <a href="https://github.com/dguedry/vstenv#what-works">The full list of what works</a>
+        <a href="https://github.com/dguedry/vstenv">Source on GitHub</a>
+      </p>
+    </div>
+    <div>
+      <p class="label">Tested and working</p>
+      <ul class="vendors">
+        <li>Native Instruments <span>Native Access, Kontakt 8, Komplete Kontrol</span></li>
+        <li>IK Multimedia <span>SampleTank, Hammond B-3X</span></li>
+        <li>Steinberg <span>HALion Sonic 7</span></li>
+        <li>Arturia <span>Analog Lab V</span></li>
+        <li>KORG <span>Software Pass, TRITON</span></li>
+        <li>Audio Modeling <span>SWAM</span></li>
+        <li>iZotope, Softube, FabFilter, Soundtoys, Valhalla, Xfer Serum 2</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="get">
+    <div>
+      <h3>Install VST Environment</h3>
+      <p>A Flatpak from the project's own signed repository, for any Linux
+        with Flatpak. StageRig OS installs it for each user at first
+        login.</p>
+    </div>
+    <div class="code">
+      <button class="copy" type="button">Copy</button>
+<pre><code>flatpak remote-add --if-not-exists --user vstenv https://dguedry.github.io/vstenv/vstenv.flatpakrepo
+flatpak install --user vstenv io.github.dguedry.vstenv</code></pre>
+    </div>
+  </div>
+
+  <p class="fineprint">VST Environment is an independent, unofficial project.
+    It is not associated with, endorsed by or supported by any of the companies
+    whose software it installs. Product names and trademarks belong to their
+    owners.</p>
+</section>
+
+<section class="start" id="start">
+  <h2>Build the rig</h2>
+  <ol class="steps">
+    <li>
+      <h3>Install Ubuntu 26.04 LTS</h3>
+      <p>The ordinary desktop, from <a href="https://ubuntu.com/download/desktop">ubuntu.com</a>.
+        Choose the default selection of apps.</p>
+    </li>
+    <li>
+      <h3>Run one line</h3>
+      <div class="code">
+        <button class="copy" type="button">Copy</button>
+<pre><code>wget -qO- https://dguedry.github.io/stagerig-os/install.sh | sudo bash</code></pre>
+      </div>
+      <p>Restart. VST Environment installs itself the first time you log
+        in.</p>
+    </li>
+    <li>
+      <h3>Plug in and play</h3>
+      <p>Open StageRig, choose your audio interface under <b>Audio...</b>, and
+        add an instrument. Run <code>stagerig-os-check</code> to see that
+        everything is in place.</p>
+    </li>
+  </ol>
+  <p class="already">Already have a Linux you like? Install
+    <a href="#stagerig">StageRig</a> and <a href="#vstenv">VST Environment</a>
+    on their own.</p>
+</section>
+
+</main>
+
+<footer class="foot">
+  <img src="assets/img/wordmark.svg" alt="StageRig" width="117" height="25">
+  <nav aria-label="Projects on GitHub">
+    <a href="https://github.com/dguedry/stagerig">StageRig</a>
+    <a href="https://github.com/dguedry/stagerig-os">StageRig OS</a>
+    <a href="https://github.com/dguedry/vstenv">VST Environment</a>
+    <a href="https://github.com/dguedry/stagerig/issues">Report a problem</a>
+  </nav>
+  <p>Free software under the GPL-3.0. Ubuntu is a trademark of Canonical Ltd.
+    Other product names belong to their owners, and none of these projects is
+    affiliated with them.</p>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
