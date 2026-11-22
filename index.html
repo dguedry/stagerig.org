@@ -19,7 +19,7 @@
 <link rel="icon" href="assets/img/stagerig-icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/img/icon-256.png">
 <link rel="preload" href="assets/fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
 
@@ -362,22 +362,31 @@ flatpak install --user vstenv io.github.dguedry.vstenv</code></pre>
         everything is in place.</p>
     </li>
   </ol>
-  <h2 class="own-title" id="install">Or add them to the Linux you already have</h2>
-  <p class="own-lede">StageRig and VST Environment install on their own, on
-    any recent Linux. Neither needs StageRig OS.</p>
+  <div class="own-head" id="install">
+    <p class="eyebrow">Just the apps</p>
+    <h2>Keep your Linux. <span class="amber">Add the apps.</span></h2>
+    <p>StageRig and VST Environment install on their own, on any recent
+      Linux. Neither needs StageRig OS.</p>
+  </div>
 
   <div class="own">
     <article>
       <header>
-        <img src="assets/img/stagerig-icon.svg" alt="" width="44" height="44">
-        <h3>StageRig</h3>
+        <img src="assets/img/stagerig-icon.svg" alt="" width="52" height="52">
+        <div>
+          <h3>StageRig</h3>
+          <p>The live host</p>
+        </div>
+        <span class="pill">apt &middot; dnf</span>
       </header>
       <ol>
         <li>
-          <p>Add StageRig's signed package repository and install it. New
-            releases then arrive with your ordinary updates.</p>
-          <p class="label">Debian, Ubuntu, Linux Mint</p>
-          <div class="code">
+          <h4>Add the repository and install</h4>
+          <div class="tabs" role="tablist" aria-label="Your Linux">
+            <button type="button" role="tab" aria-selected="true" data-tab="apt">Debian &middot; Ubuntu &middot; Mint</button>
+            <button type="button" role="tab" aria-selected="false" data-tab="dnf">Fedora</button>
+          </div>
+          <div class="code" data-panel="apt">
             <button class="copy" type="button">Copy</button>
 <pre><code>sudo install -d /etc/apt/keyrings
 curl -fsSL https://dguedry.github.io/stagerig/key.gpg | sudo tee /etc/apt/keyrings/stagerig.gpg >/dev/null
@@ -385,57 +394,67 @@ echo "deb [signed-by=/etc/apt/keyrings/stagerig.gpg] https://dguedry.github.io/s
   | sudo tee /etc/apt/sources.list.d/stagerig.list
 sudo apt update && sudo apt install stagerig</code></pre>
           </div>
-          <p class="label">Fedora</p>
-          <div class="code">
+          <div class="code" data-panel="dnf">
             <button class="copy" type="button">Copy</button>
 <pre><code>sudo curl -fsSL -o /etc/yum.repos.d/stagerig.repo https://dguedry.github.io/stagerig/stagerig.repo
 sudo dnf install stagerig</code></pre>
           </div>
+          <p>New releases then arrive with your ordinary updates.</p>
         </li>
         <li>
+          <h4>Add some free plugins</h4>
           <p>StageRig comes with a General MIDI player and no other plugins.
-            These free ones are good enough to gig with (the line is for Debian,
-            Ubuntu and Mint; the manual has Fedora's):</p>
-          <div class="code">
+            These are good enough to gig with.</p>
+          <div class="code" data-panel="apt">
             <button class="copy" type="button">Copy</button>
 <pre><code>sudo apt install setbfree zynaddsubfx-lv2 avldrums.lv2 dragonfly-reverb \
                  lsp-plugins-lv2 x42-plugins calf-plugins guitarix-lv2 zam-plugins</code></pre>
           </div>
+          <p data-panel="dnf">On Fedora, the
+            <a href="https://github.com/dguedry/stagerig/blob/main/docs/MANUAL.md">manual</a>'s
+            <i>Good free plugins to start with</i> has the line.</p>
         </li>
         <li>
-          <p>Open <b>StageRig</b> from your applications menu, choose your
+          <h4>Open it and play</h4>
+          <p>Start <b>StageRig</b> from your applications menu, choose your
             audio interface under <b>Audio...</b>, and add an instrument.
             The <a href="https://github.com/dguedry/stagerig/blob/main/docs/MANUAL.md">manual</a>
             takes it from there.</p>
         </li>
       </ol>
-      <p class="note">Packages are for 64-bit Intel and AMD computers. Each
-        release's <code>.deb</code> and <code>.rpm</code> are also on the
+      <p class="note">For 64-bit Intel and AMD computers. Each release's
+        <code>.deb</code> and <code>.rpm</code> are also on the
         <a href="https://github.com/dguedry/stagerig/releases/latest">releases page</a>.</p>
     </article>
 
     <article>
       <header>
-        <img src="assets/img/vstenv-icon.svg" alt="" width="44" height="44">
-        <h3>VST Environment</h3>
+        <img src="assets/img/vstenv-icon.svg" alt="" width="52" height="52">
+        <div>
+          <h3>VST Environment</h3>
+          <p>Your Windows plugins</p>
+        </div>
+        <span class="pill">Flatpak</span>
       </header>
       <ol>
         <li>
-          <p>You need Flatpak, which most Linux systems already have. If
-            yours does not, see <a href="https://flatpak.org/setup/">flatpak.org/setup</a>.
-            Then paste these two lines:</p>
+          <h4>Paste two lines</h4>
           <div class="code">
             <button class="copy" type="button">Copy</button>
 <pre><code>flatpak remote-add --if-not-exists --user vstenv https://dguedry.github.io/vstenv/vstenv.flatpakrepo
 flatpak install --user vstenv io.github.dguedry.vstenv</code></pre>
           </div>
+          <p>They need Flatpak, which most Linux systems already have. If
+            yours does not, see <a href="https://flatpak.org/setup/">flatpak.org/setup</a>.</p>
         </li>
         <li>
-          <p>Open <b>VST Environment</b> from your applications menu, under
+          <h4>Open it once</h4>
+          <p>Start <b>VST Environment</b> from your applications menu, under
             Audio or Sound &amp; Video. The first time, it sets everything up
             by itself.</p>
         </li>
         <li>
+          <h4>Install your plugins</h4>
           <p>On the <b>Install</b> tab, open your vendor's store app and sign
             in, or choose an installer you downloaded. The plugins then show
             up in StageRig and your other music software like any
@@ -464,6 +483,6 @@ flatpak install --user vstenv io.github.dguedry.vstenv</code></pre>
     affiliated with them.</p>
 </footer>
 
-<script src="script.js" defer></script>
+<script src="script.js?v=3" defer></script>
 </body>
 </html>
