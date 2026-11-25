@@ -54,7 +54,7 @@
   <dl class="proof">
     <div>
       <dt>1.3&nbsp;ms</dt>
-      <dd>buffer with Kontakt&nbsp;8, a Windows plugin, in StageRig on StageRig&nbsp;OS</dd>
+      <dd>latency with Kontakt&nbsp;8, a Windows plugin, in StageRig on StageRig&nbsp;OS, from a spinning hard drive</dd>
     </div>
     <div>
       <dt>4 formats</dt>
@@ -249,18 +249,20 @@ sudo apt update && sudo apt install stagerig</code></pre>
         effects, General MIDI soundfonts, and VST Environment.</p>
     </li>
     <li>
-      <h3>Nothing hidden</h3>
-      <p>Every change is listed with its file and its reason, and purging
-        the package removes the settings. A checker tells you what needs a
-        look.</p>
+      <h3>Easy to inspect, easy to undo</h3>
+      <p>See <a href="https://github.com/dguedry/stagerig-os#what-it-changes">every
+        setting it changes</a> on your computer, with the file and the reason.
+        One command removes them all again, and <code>stagerig-os-check</code>
+        tells you if anything needs attention.</p>
     </li>
   </ul>
 
   <blockquote class="measure">
     <p><strong>1.3&nbsp;ms.</strong> Kontakt&nbsp;8, bridged from Windows by VST
       Environment, played in StageRig on a PC set up by StageRig&nbsp;OS.</p>
-    <footer>The buffer StageRig reported: 64 samples at 48&nbsp;kHz. What your
-      computer and audio interface manage will differ.</footer>
+    <footer>The latency StageRig reported: 64 samples at 48&nbsp;kHz. The PC
+      runs from a spinning hard drive, not an SSD. What your computer and
+      audio interface manage will differ.</footer>
   </blockquote>
 </section>
 
