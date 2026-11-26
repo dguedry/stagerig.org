@@ -19,7 +19,7 @@
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/img/icon-256.png">
 <link rel="preload" href="assets/fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=4">
+<link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
 
@@ -209,9 +209,9 @@
   <div class="get">
     <div>
       <h3>Install StageRig</h3>
-      <p>For Debian, Ubuntu and Linux Mint, from a signed repository, so new
-        releases arrive with your ordinary updates. Fedora packages are on
-        GitHub. Or let <a href="#os">StageRig OS</a> install it for you.</p>
+      <p>For Debian, Ubuntu, Linux Mint, Fedora and Arch, from a signed
+        repository, so new releases arrive with your ordinary updates. Or let
+        <a href="#os">StageRig OS</a> install it for you.</p>
       <p class="links">
         <a href="https://github.com/dguedry/stagerig/blob/main/docs/MANUAL.md">Read the manual</a>
         <a href="https://github.com/dguedry/stagerig">Source on GitHub</a>
@@ -410,7 +410,7 @@ flatpak install --user vstenv io.github.dguedry.vstenv</code></pre>
           <h3>StageRig</h3>
           <p>The live host</p>
         </div>
-        <span class="pill">apt &middot; dnf</span>
+        <span class="pill">apt &middot; dnf &middot; pacman</span>
       </header>
       <ol>
         <li>
@@ -418,6 +418,7 @@ flatpak install --user vstenv io.github.dguedry.vstenv</code></pre>
           <div class="tabs" role="tablist" aria-label="Your Linux">
             <button type="button" role="tab" aria-selected="true" data-tab="apt">Debian &middot; Ubuntu &middot; Mint</button>
             <button type="button" role="tab" aria-selected="false" data-tab="dnf">Fedora</button>
+            <button type="button" role="tab" aria-selected="false" data-tab="pacman">Arch &middot; Manjaro</button>
           </div>
           <div class="code" data-panel="apt">
             <button class="copy" type="button">Copy</button>
@@ -431,6 +432,13 @@ sudo apt update && sudo apt install stagerig</code></pre>
             <button class="copy" type="button">Copy</button>
 <pre><code>sudo curl -fsSL -o /etc/yum.repos.d/stagerig.repo https://dguedry.github.io/stagerig/stagerig.repo
 sudo dnf install stagerig</code></pre>
+          </div>
+          <div class="code" data-panel="pacman" hidden>
+            <button class="copy" type="button">Copy</button>
+<pre><code>curl -fsSL https://dguedry.github.io/stagerig/key.asc | sudo pacman-key --add -
+sudo pacman-key --lsign-key 0584CCE943945336497166DDE3745FD7E8DEB0F3
+printf '\n[stagerig]\nServer = https://dguedry.github.io/stagerig/arch\n' | sudo tee -a /etc/pacman.conf
+sudo pacman -Syu stagerig pipewire-jack</code></pre>
           </div>
           <p>New releases then arrive with your ordinary updates.</p>
         </li>
@@ -446,6 +454,11 @@ sudo dnf install stagerig</code></pre>
           <p data-panel="dnf">On Fedora, the
             <a href="https://github.com/dguedry/stagerig/blob/main/docs/MANUAL.md">manual</a>'s
             <i>Good free plugins to start with</i> has the line.</p>
+          <div class="code" data-panel="pacman" hidden>
+            <button class="copy" type="button">Copy</button>
+<pre><code>sudo pacman -S surge-xt setbfree dexed zynaddsubfx avldrums.lv2 dragonfly-reverb \
+               lsp-plugins-lv2 x42-plugins-lv2 calf guitarix zam-plugins-lv2</code></pre>
+          </div>
         </li>
         <li>
           <h4>Open it and play</h4>
@@ -456,7 +469,7 @@ sudo dnf install stagerig</code></pre>
         </li>
       </ol>
       <p class="note">For 64-bit Intel and AMD computers. Each release's
-        <code>.deb</code> and <code>.rpm</code> are also on the
+        <code>.deb</code>, <code>.rpm</code> and Arch package are also on the
         <a href="https://github.com/dguedry/stagerig/releases/latest">releases page</a>.</p>
     </article>
 
