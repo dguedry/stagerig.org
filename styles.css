@@ -88,7 +88,7 @@ code { font-family: var(--mono); font-size: .9em; }
 
 .proof {
   width: 100%; max-width: var(--page); margin: 64px auto 0;
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
   background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden;
 }
 .proof div { background: rgba(6, 18, 32, .88); padding: 22px 24px; }
