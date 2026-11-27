@@ -447,24 +447,33 @@ sudo dnf install stagerig</code></pre>
 <pre><code>curl -fsSL https://dguedry.github.io/stagerig/key.asc | sudo pacman-key --add -
 sudo pacman-key --lsign-key 0584CCE943945336497166DDE3745FD7E8DEB0F3
 printf '\n[stagerig]\nServer = https://dguedry.github.io/stagerig/arch\n' | sudo tee -a /etc/pacman.conf
-sudo pacman -Syu stagerig pipewire-jack surge-xt setbfree dexed zynaddsubfx avldrums.lv2 \
-     dragonfly-reverb lsp-plugins-lv2 x42-plugins-lv2 calf guitarix zam-plugins-lv2</code></pre>
+sudo pacman -Syu stagerig pipewire-jack</code></pre>
           </div>
-          <p>A set of free plugins good enough to gig with comes with it:
-            Surge XT, setBfree, ZynAddSubFX, Dragonfly Reverb, LSP, Calf and
-            more. New releases then arrive with your ordinary updates.</p>
+          <p>New releases then arrive with your ordinary updates.</p>
         </li>
         <li>
           <h4>Add some free sounds</h4>
           <p><a href="https://github.com/dguedry/stagerig-sounds">StageRig Sounds</a>:
             pianos, electric pianos, bass, guitar, drums, an orchestra, organs
             and mallets, 44 instruments in all, free to gig and record with,
-            and 43 ready sounds made from them. Download the packs you want one
-            at a time, or all of them (3.5 GB):</p>
-          <div class="code">
+            and 43 ready sounds made from them. They are a separate package,
+            from the same place:</p>
+          <div class="code" data-panel="apt">
             <button class="copy" type="button">Copy</button>
-<pre><code>curl -fsSL https://github.com/dguedry/stagerig-sounds/releases/latest/download/install.sh | sh</code></pre>
+<pre><code>sudo apt install stagerig-sounds</code></pre>
           </div>
+          <div class="code" data-panel="dnf">
+            <button class="copy" type="button">Copy</button>
+<pre><code>sudo dnf install stagerig-sounds</code></pre>
+          </div>
+          <div class="code" data-panel="pacman" hidden>
+            <button class="copy" type="button">Copy</button>
+<pre><code>sudo pacman -S stagerig-sounds</code></pre>
+          </div>
+          <p>It downloads the instruments (3.5 GB on disk) and brings the
+            reverbs they play through, and on Debian, Ubuntu and Fedora a set of
+            free plugins good enough to gig with: setBfree, ZynAddSubFX, LSP,
+            Calf, Guitarix and more.</p>
         </li>
         <li>
           <h4>Open it and play</h4>
